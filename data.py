@@ -19,7 +19,7 @@ NODE_TAGS_PATH = "nodes_tags.csv"
 WAYS_PATH = "ways.csv"
 WAY_NODES_PATH = "ways_nodes.csv"
 WAY_TAGS_PATH = "ways_tags.csv"
-OSM_PATH = "bronxtoles.osm"
+OSM_PATH = "m2.osm"
 
 LOWER_COLON = re.compile(r'^([a-z]|_)+:([a-z]|_)+')
 PROBLEMCHARS = re.compile(r'[=\+/&<>;\'"\?%#$@\,\. \t\r\n]')
@@ -149,7 +149,7 @@ class UnicodeDictWriter(csv.DictWriter, object):
 
     def writerow(self, row):
         super(UnicodeDictWriter, self).writerow({
-            k: (v.encode('utf-8') if isinstance(v, 
+            k: (v.encode('utf-8') if isinstance(v,
                 unicode) else v) for k, v in row.iteritems()
         })
 
